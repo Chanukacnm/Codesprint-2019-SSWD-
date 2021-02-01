@@ -1,0 +1,40 @@
+<div id="container">
+    <div id="header">
+        <h1>Hit-Ad</h1>
+        <h2></h2>
+        <h3><?php echo "Colombo, ".date('d F Y H:i:s');?> </h3>
+    </div>
+    <div id="navigation">
+        <ul>
+            <?php
+			if(isset($_SESSION['addId'])){
+				if($_SESSION['userType']=='c'){
+					echo "<li><a href='index.php'>Home </a></li>";
+            echo "<li><a href='aboutus.php'>About Us</a></li>";
+            echo "<li><a href='logout.php'>Logout</a></li>";
+            echo "<li style='float: right'><a href='basket.php'>Smart Basket</a></li>";
+            }
+            else if($_SESSION['userType']=='a'){
+            echo "<li><a href='index.php'>Home </a></li>";
+            echo "<li><a href='addAdd.php'>Add Product</a></li>";
+            echo "<li><a href='editAdd.php'>Edit Product</a></li>";
+            echo "<li><a href='processorders.php'>Process Product</a></li>";
+            echo "<li style='float: right'><a href='logout.php'>Staff Logout</a></li>";
+            }
+            }
+            else{
+            echo "<li><a href='index.php'>Home </a></li>";
+            echo "<li><a href='aboutus.php'>About Us</a></li>";
+            echo "<li><a href='signup.php'>Sign Up</a></li>";
+            echo "<li><a href='login.php'>Login</a></li>";
+            echo "<li style='float: right'><a href='login.php'>Staff Login</a></li>";
+            echo "<li style='float: right'><a href='basket.php'>WishList</a></li>";
+            echo "<li style='float: right'><a href='addAdd.php'>Add Ad</a></li>";
+
+
+            }
+            ?>
+        </ul>
+    </div>
+
+    <div id="content">
